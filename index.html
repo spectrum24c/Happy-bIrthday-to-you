@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday, Mom</title>
+    <link rel="shortcut icon" href="favico/360523149_11451411-removebg-preview.png" type="png">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@300;400;700&display=swap');
 
@@ -230,6 +231,41 @@
             100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
         }
 
+        /* Responsive Splash Screen */
+        #splash {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(135deg,#2E1A47 0%,#8E3D99 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            color: #FFD700;
+            font-family: 'Great Vibes',cursive;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            text-align: center;
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+        @media (max-width: 600px) {
+            #splash {
+                font-size: 1.5rem;
+                padding: 1rem;
+            }
+            #splash > div:first-child {
+                font-size: 1.7rem; /* Increased for mobile as well */
+            }
+            #splash > div:last-child {
+                font-size: 1.4rem !important;
+                margin-top: 1rem !important;
+            }
+        }
+
         @media (max-width: 768px) {
             .container {
                 padding: clamp(1.2rem, 3vw, 2.5rem);
@@ -283,53 +319,84 @@
     </style>
 </head>
 <body>
-    <audio  autoplay loop >
-  <source src="Happy_birthday_to_you_MIDI(chosic.com).mp3" type="audio/ogg">
-  <source src="Happy_birthday_to_you_MIDI(chosic.com).mp3" type="audio/mpeg">
-</audio>
-
-    <div class="parallax-bg"></div>
-    <div class="confetti">
-        <div class="confetti-piece" style="left: 10%; animation-delay: 0s; background: #FFD700;"></div>
-        <div class="confetti-piece" style="left: 20%; animation-delay: 1s; background: #FFB6C1;"></div>
-        <div class="confetti-piece" style="left: 30%; animation-delay: 2s; background: #FFD700;"></div>
-        <div class="confetti-piece" style="left: 40%; animation-delay: 3s; background: #FFB6C1;"></div>
-        <div class="confetti-piece" style="left: 50%; animation-delay: 4s; background: #FFD700;"></div>
-        <div class="confetti-piece" style="left: 60%; animation-delay: 5s; background: #FFB6C1;"></div>
-        <div class="confetti-piece" style="left: 70%; animation-delay: 6s; background: #FFD700;"></div>
-        <div class="confetti-piece" style="left: 80%; animation-delay: 7s; background: #FFB6C1;"></div>
-        <div class="confetti-piece" style="left: 90%; animation-delay: 8s; background: #FFD700;"></div>
+    <!-- Splash Screen -->
+    <div id="splash">
+        <div>🎉 Happy Birthday, Mom! 🎉</div>
+        <div style="font-size:1.2rem;margin-top:1.5rem;">Loading your surprise...</div>
     </div>
 
-    <div class="container">
-        <h1>Happy Birthday, Mom!</h1>
-        <p>Today, June 7, 2025, we celebrate your radiant spirit and endless love. Your grace lights up our lives, and this day is all for you!</p>
-        <div class="slider">
-            <div class="slides" id="slides">
-                <div class="slide">
-                    <img src="WhatsApp Image 2025-06-07 at 12.43.02_61c7e296.jpg" alt="Memory 1">
-                    <div class="slide-caption">A cherished moment of your warmth</div>
-                </div>
-                <div class="slide">
-                    <img src="WhatsApp Image 2025-06-07 at 12.43.02_7fc1c9da.jpg" alt="Memory 2">
-                    <div class="slide-caption">Your smile brightens every day</div>
-                </div>
-                <div class="slide">
-                    <img src="WhatsApp Image 2025-06-07 at 12.43.03_b1eeeb8c.jpg" alt="Memory 3">
-                    <div class="slide-caption">Forever our guiding star</div>
+    <!-- Audio (hidden initially) -->
+    <audio id="bg-music" loop style="display:none;">
+      <source src="Happy_birthday_to_you_MIDI(chosic.com).mp3" type="audio/ogg">
+      <source src="Happy_birthday_to_you_MIDI(chosic.com).mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="main-content" style="display:none;">
+        <div class="parallax-bg"></div>
+        <div class="confetti">
+            <div class="confetti-piece" style="left: 10%; animation-delay: 0s; background: #FFD700;"></div>
+            <div class="confetti-piece" style="left: 20%; animation-delay: 1s; background: #FFB6C1;"></div>
+            <div class="confetti-piece" style="left: 30%; animation-delay: 2s; background: #FFD700;"></div>
+            <div class="confetti-piece" style="left: 40%; animation-delay: 3s; background: #FFB6C1;"></div>
+            <div class="confetti-piece" style="left: 50%; animation-delay: 4s; background: #FFD700;"></div>
+            <div class="confetti-piece" style="left: 60%; animation-delay: 5s; background: #FFB6C1;"></div>
+            <div class="confetti-piece" style="left: 70%; animation-delay: 6s; background: #FFD700;"></div>
+            <div class="confetti-piece" style="left: 80%; animation-delay: 7s; background: #FFB6C1;"></div>
+            <div class="confetti-piece" style="left: 90%; animation-delay: 8s; background: #FFD700;"></div>
+        </div>
+
+        <div class="container">
+            <h1>Happy Birthday, Mom!</h1>
+            <p>Today, June 8, 2025, we celebrate your radiant spirit and endless love. Your grace lights up our lives, and this day is all for you!</p>
+            <div class="slider">
+                <div class="slides" id="slides">
+                    <div class="slide">
+                        <img src="WhatsApp Image 2025-06-07 at 12.43.02_61c7e296.jpg" alt="Memory 1">
+                        <div class="slide-caption">A cherished moment of your warmth</div>
+                    </div>
+                    <div class="slide">
+                        <img src="WhatsApp Image 2025-06-07 at 12.43.02_7fc1c9da.jpg" alt="Memory 2">
+                        <div class="slide-caption">Your smile brightens every day</div>
+                    </div>
+                    <div class="slide">
+                        <img src="WhatsApp Image 2025-06-07 at 12.43.03_b1eeeb8c.jpg" alt="Memory 3">
+                        <div class="slide-caption">Forever our guiding star</div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="message">
-            Dearest Mom, your love is the heart of our family. We celebrate your joy, strength, and beauty today and always. Happy Birthday!
+            <div class="message">
+                Dearest Mom, your love is the heart of our family. We celebrate your joy, strength, and beauty today and always. Happy Birthday!
+            </div>
         </div>
     </div>
 
     <script>
+        // Splash screen logic
+        window.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                document.getElementById('splash').style.display = 'none';
+                document.getElementById('main-content').style.display = '';
+                const audio = document.getElementById('bg-music');
+                audio.style.display = '';
+                // Try to play music (may require user interaction in some browsers)
+                audio.play().catch(() => {
+                    // If autoplay fails, show a play button
+                    let btn = document.createElement('button');
+                    btn.textContent = "Play Music";
+                    btn.style = "position:fixed;top:20px;right:20px;z-index:10000;font-size:1.2rem;padding:0.5em 1em;border-radius:10px;background:#FFD700;color:#2E1A47;border:none;box-shadow:0 2px 8px rgba(0,0,0,0.2);";
+                    btn.onclick = function() {
+                        audio.play();
+                        btn.remove();
+                    };
+                    document.body.appendChild(btn);
+                });
+            }, 2500); // Splash duration (2.5 seconds)
+        });
+
+        // Slider logic (unchanged)
         let slideIndex = 0;
         const slides = document.getElementById('slides');
         const totalSlides = document.querySelectorAll('.slide').length;
-       
 
         function showSlide(index) {
             if (index >= totalSlides) slideIndex = 0;
